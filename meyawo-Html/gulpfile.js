@@ -1,6 +1,9 @@
+
+
 // node.js Packages / Dependencies
 const gulp          = require('gulp');
-const sass          = require('gulp-sass');
+//const sass          = require('gulp-sass');
+const sass = require("gulp-sass")(require("sass"));
 const uglify        = require('gulp-uglify');
 const rename        = require('gulp-rename');
 const concat        = require('gulp-concat');
@@ -8,11 +11,17 @@ const cleanCSS      = require('gulp-clean-css');
 const imageMin      = require('gulp-imagemin');
 const pngQuint      = require('imagemin-pngquant'); 
 const browserSync   = require('browser-sync').create();
-const autoprefixer  = require('gulp-autoprefixer');
+//const autoprefixer  = require('gulp-autoprefixer');
 const jpgRecompress = require('imagemin-jpeg-recompress'); 
 const clean         = require('gulp-clean');
 
-
+var AUTOPREFIXER_BROWSERS = [
+    "last 3 versions",
+    "ie >= 8",
+    "ios >= 7",
+    "android >= 4.4",
+    "bb >= 10",
+  ];
 // Paths
 var paths = {
     root: { 
@@ -40,7 +49,10 @@ var paths = {
 gulp.task('sass', function() {
     return gulp.src(paths.src.scss)
     .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError)) 
-    .pipe(autoprefixer())
+   /* .pipe(autoprefixer({
+        browsers: AUTOPREFIXER_BROWSERS,
+        cascade: false,
+      }))*/
     .pipe(gulp.dest(paths.src.root + '/css'))
     .pipe(browserSync.stream());
 });
@@ -105,3 +117,5 @@ gulp.task('watch', function() {
     gulp.watch(paths.src.js).on('change', browserSync.reload);
     gulp.watch(paths.src.html).on('change', browserSync.reload);
 });
+
+gulp.task("default", gulp.series("build", gulp.parallel("build")));

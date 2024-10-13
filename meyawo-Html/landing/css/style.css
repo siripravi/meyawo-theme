@@ -1,0 +1,60 @@
+body
+{
+    font-family: 'Open Sans', sans-serif;
+}
+h1
+{
+    color:#1c8ac9;
+    border-bottom: 2px solid #e3e3e3;
+    padding-bottom: 20px;
+    margin: 20px;
+}
+h4{
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 5px auto;
+}
+h2{
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 2rem;
+    color:#444444;
+    margin: 25px auto;
+}
+.top-area
+{
+    padding: 25px 0;
+}
+.lead-area
+{
+    background-color: #e8f1f6;
+    padding: 70px 0;
+}
+.lead-form
+{
+    background: #2385b3;
+    border-radius: 3px;
+    padding: 30px 25px;
+    color: #ffffff;
+}
+.lead-form h3
+{
+    font-size: 1.3rem;
+    font-weight: 500;
+    line-height: 2rem;
+    margin: 25px auto;
+}
+.btn-submit
+{
+    width: 100%;
+    background: #ff6e6e;
+    color:#fff;
+    border-bottom: 7px solid #a44b4b;
+    padding: .5rem;
+    margin: 20px auto;
+}
+#submitHelp
+{
+    padding-top: 10px;
+    color: #ffffff;
+}
