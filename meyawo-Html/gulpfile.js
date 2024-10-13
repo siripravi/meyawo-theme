@@ -79,14 +79,14 @@ gulp.task('js', function() {
 // Compress (JPEG, PNG, GIF, SVG, JPG)
 gulp.task('img', function(){
     return gulp.src(paths.src.imgs)
-    .pipe(imageMin([
+   /* .pipe(imageMin([
         imageMin.gifsicle(),
         imageMin.jpegtran(),
         imageMin.optipng(),
         imageMin.svgo(),
         pngQuint(),
-      //  jpgRecompress()
-    ]))
+        jpgRecompress()
+    ]))*/
     .pipe(gulp.dest(paths.dist.imgs));
 });
 
