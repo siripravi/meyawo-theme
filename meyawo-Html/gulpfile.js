@@ -85,7 +85,7 @@ gulp.task('img', function(){
         imageMin.optipng(),
         imageMin.svgo(),
         pngQuint(),
-        jpgRecompress()
+      //  jpgRecompress()
     ]))
     .pipe(gulp.dest(paths.dist.imgs));
 });
